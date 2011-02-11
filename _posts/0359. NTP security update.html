@@ -1,0 +1,36 @@
+---
+categories: Security
+date: 2009/05/19 08:54:43
+guid: http://ufusion.org/?p=359
+permalink: http://blog.ksmx.me/Security/ntp-security-update
+tags: privileges, red hat network, red hat enterprise, buffer overflow, attacker
+title: NTP security update
+---
+1. Description
+
+The Network Time Protocol (NTP) is used to synchronize a computer's time with a referenced time source.
+
+A buffer overflow flaw was discovered in the ntpd daemon's NTPv4 authentication code. If ntpd was configured to use public key cryptography for NTP packet authentication, a remote attacker could use this flaw to send a specially-crafted request packet that could crash ntpd or, potentially, execute arbitrary code with the privileges of the "ntp" user.
+
+<!--more-->
+
+Note: NTP authentication is not enabled by default.
+
+A buffer overflow flaw was found in the ntpq diagnostic command. A malicious, remote server could send a specially-crafted reply to an ntpq request that could crash ntpq or, potentially, execute arbitrary code with the privileges of the user running the ntpq command.
+
+All ntp users are advised to upgrade to this updated package, which contains backported patches to resolve these issues. After installing the update, the ntpd daemon will be restarted automatically.
+
+2. Relevant releases/architectures:
+
+Red Hat Enterprise Linux AS version 4 - i386, ia64, ppc, s390, s390x, x86_64
+Red Hat Enterprise Linux AS version 4.7.z - i386, ia64, ppc, s390, s390x, x86_64
+Red Hat Enterprise Linux Desktop version 4 - i386, x86_64
+Red Hat Enterprise Linux ES version 4 - i386, ia64, x86_64
+Red Hat Enterprise Linux ES version 4.7.z - i386, ia64, x86_64
+Red Hat Enterprise Linux WS version 4 - i386, ia64, x86_64
+
+3. Solution:
+
+Before applying this update, make sure that all previously-released errata relevant to your system have been applied.
+
+This update is available via Red Hat Network.  Details on how to use the Red Hat Network to apply this update are available at<a href="http://kbase.redhat.com/faq/docs/DOC-11259" target="_blank"> http://kbase.redhat.com/faq/docs/DOC-11259</a>

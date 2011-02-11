@@ -1,0 +1,39 @@
+---
+categories: C Programming
+date: 2009/06/24 07:01:55
+guid: http://ufusion.org/?p=382
+permalink: http://blog.ksmx.me/C Programming/c-pointer
+tags: 程序设计, C, 指针
+title: 一个C语言指针的最简单实例
+---
+明天听说要考试，捡起我丢弃几年的C语言看了一下，恐他们可能会考C的指针，所以需要搞清楚指针的来龙去脉，记得有一个很简单的实例，可以很清楚的知道C语言本身对指针的申明和操作，贴在这里，以备今后再次忘记，说实话，我很想好好的学一门语言，最近打算从Python入手。
+
+<strong>程序代码：</strong>
+<pre lang="C">#include
+main()
+{
+	int x = 8;
+	int *q, *p = &x;
+
+	q = p;
+
+	printf("整形变量x的值是:%d\n", x);
+	printf("指针p所指向的目标值*p是:%d\n", *p);
+	printf("指针q所指向的目标值*p是:%d\n\n", *q);
+	printf("变量x的地址&x是:%xH\n", &x);
+	printf("指针p中的值是:%xH\n", p);
+	printf("指针q中的值是:%xH\n", q);
+	printf("指针p的地址&p是:%xH\n", &p);
+	printf("指针q的地址&q是:%xH\n", &q);
+}</pre><!--more-->
+<strong>输出结果（在Gentoo中我不喜欢弄中文环境，所以我的输出中没有中文）：</strong>
+<pre lang="C">
+1:8
+2:8
+3:8
+4:bf804c00H
+5:bf804c00H
+6:bf804c00H
+7:bf804bf8H
+8:bf804bfcH
+</pre>

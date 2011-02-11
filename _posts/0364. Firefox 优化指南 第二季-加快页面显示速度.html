@@ -1,0 +1,19 @@
+---
+categories: Tools
+date: 2009/05/30 01:57:35
+guid: http://ufusion.org/?p=364
+permalink: http://blog.ksmx.me/Tools/firefox-%e4%bc%98%e5%8c%96%e6%8c%87%e5%8d%97-%e7%ac%ac%e4%ba%8c%e5%ad%a3-%e5%8a%a0%e5%bf%ab%e9%a1%b5%e9%9d%a2%e6%98%be%e7%a4%ba%e9%80%9f%e5%ba%a6
+tags: Ubuntu, Firefox, Hacking, 优化
+title: Firefox 优化指南 第二季-加快页面显示速度
+---
+一些修改是用来加速页面的显示速度的，也就是可以加快页面呈现速度，这些设置可以让你的页面更快的展现出来，减少了你等待的时间。还有一些写关于网络部分加速的，这些我们后面来讨论。
+<h3><strong>开始呈现页面时间</strong></h3>
+<span style="font-weight: bold; color: #9b0300;"> nglayout.initialpaint.delay</span> 设定Firefox等待多久开始呈现页面，如果这个值没有设定，默认是250毫秒，也就是0.25秒，你可以设定为0，让它立刻开始呈现页面。<!--more-->
+<h3>减小<strong>reflows数量</strong></h3>
+<span style="font-weight: bold; color: #9b0300;">content.notify.interval</span> Firefox在载入页面的过程中，会根据不同的页面内容来重新格式化页面的载入，比如我们经常看到的文字部分有了，图片慢慢出来，这叫做 reflows。这个选项设置了在不同的reflows之间切换的最小时间。默认为120000 (0.12 秒，这里的单位是微秒，百万分之一秒)，这个值太小或者太大都会影响性能，太小的话，就不停的切换，一个部分只停留很短时间，资源就消耗在了切换上，太大又会导致切换太慢，本来可以先将一 部分显示出来我们先看着，但是由于切换慢，所以可能每一个reflows都没有载入完毕。建议在 <strong>500000</strong> (500,000, or 1/2 second) or <strong>1000000</strong> (1 million, or 1 second) 之间调整。
+<h3>控制“无响应”时间</h3>
+<span style="font-weight: bold; color: #9b0300;">content.max.tokenizing.time</span>在Firefox载入页面的过程中，这个参数能够加快页面的载入，但是与此同时将会在一段时间不去响应用户的输入，这个理论被Mozilla叫做"tokenizing"。如果你想设置这个参数，你需要建立一个整数型变量叫做<span style="font-weight: bold; color: #9b0300;">content.max.tokenizing.time</span>，这里设置的是最大值，这个值最好大于或者等于<span style="font-weight: bold; color: #9b0300;">content.notify.interval</span>，如果小于，那么Firefox将会使用更多的资源来响应用户的输入，很明显，大家开网页的时候似乎都没有什么东西要敲的，所以加快速度才是我们的目的，与此同时，要使这个参数生效，你需要创建两个布尔型变量<span style="font-weight: bold; color: #9b0300;">content.notify.ontimer</span>和<span style="font-weight: bold; color: #9b0300;">content.interrupt.parsing</span>，并且设置为<strong>true</strong>。
+<h3>控制“高响应”时间</h3>
+当Firefox在呈现一个页面的时候，用户如果执行了一些操作命令，比如在一个正在载入的页面下，滚动鼠标滚轮。Firefox会留下一段时间来给用户做出响应。控制这个间隙时间，我们需要建立一个整型参数<span style="font-weight: bold; color: #9b0300;">content.switch.threshold</span>。通常这个参数的数值是<span style="font-weight: bold; color: #9b0300;">content.notify.interval</span>参数的三倍，但这里我象征性的设置他们两个相等。然后给他们一个很低的值<strong>10000</strong> (10,000 微秒，百万分之一秒)，这时你会感觉的Firefox响应有些卡，但是却能够更快的完成页面的载入。如果您还没做上一个“无响应”参数<span style="font-weight: bold; color: #9b0300;">content.max.tokenizing.time</span>的调整，也没有建立布尔型参数<span style="font-weight: bold; color: #9b0300;">content.notify.ontimer</span> 和 <span style="font-weight: bold; color: #9b0300;">content.interrupt.parsing</span> ，建议你创建他们并都设置为<strong>true</strong>。<span style="font-weight: bold; color: #9b0300;">content.switch.threshold</span> 和<span style="font-weight: bold; color: #9b0300;">content.max.tokenizing.time</span>的调整需要一起来做，以达到最好的效果。
+
+如果你倾向于什么都不做（比如不去滚鼠标滚轮），那么可以把<span style="font-weight: bold; color: #9b0300;">content.max.tokenizing.time</span>加大，<span style="font-weight: bold; color: #9b0300;">content.switch.threshold</span>减小。与之相反，如果你喜欢在打开页面的过程中翻来翻去，那就反其道而行之。

@@ -1,0 +1,29 @@
+---
+categories: Basic
+date: 2009/04/06 08:42:22
+guid: http://ufusion.org/?p=287
+permalink: http://blog.ksmx.me/Basic/setuid-setgid-sticky-bit
+tags: Linux, sticky bit, privileges, flags, setuid, setgid
+title: setuid,setgid 和 sticky bit
+---
+<strong>setuid</strong> and <strong>setgid</strong> (short for <strong>set</strong> <strong>u</strong>ser <strong>ID</strong> upon execution and <strong>set</strong> <strong>g</strong>roup <strong>ID</strong> upon execution, respectively) are Unix access rights flags that allow users to run an executable with the permissions of the executable's owner or group. They are often used to allow users on a computer system to run programs with temporarily elevated privileges in order to perform a specific task. While the assumed user id or group id privileges provided are not always elevated, at a minimum they are specific.
+
+setuid and setgid are needed for tasks that require higher privileges than those which a common user has, such as changing his or her login password. Some of the tasks that require elevated privileges may not immediately be obvious, though — such as the ping command, which must send and listen for control packets on a network interface.
+<h2><!--more-->setuid 、setgid在二进制文件</h2>
+当一个二进制文件拥有了setuid权限，使用ls -l参数查看的时候，就会在owner权限中有一个s代替了原来的x，这是时候，当其他人运行这个程序的时候，系统将给这个进程赋予文件拥有者的权限。要是我们给这个二进制程序赋予了setuid却没有给others执行权限，那么这个s就会变成大写“S”，这样的设置没有意义。
+
+当一个二进制文件拥有了setgid权限，情况与setuid类似，不过这次是赋予了文件群组的权限。setgid也可以赋予目录，不过不常见。对赋予目录的操作就更具目录群组所具有的权限来变化。
+<h2>sticky bit在目录</h2>
+我们系统中默认就有这么一个目录，那就是/tmp目录，对于这个目录，用户都能够创建文件，并可以读取所有目录下文件，但是只能修改和删除自己创建的。
+<h2>设置setuid,setgid和sticky bit</h2>
+<pre lang="bash">chmod ug+s
+#给文件设置了setuid和setgid
+
+chmod +t
+#给目录设置sticky bit</pre>
+还有通过数字的方式来设置
+<pre lang="bash">chmod 4751
+#设置了setuid
+
+chmod 2751
+#设置了setgid</pre>

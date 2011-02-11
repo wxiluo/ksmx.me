@@ -1,0 +1,143 @@
+---
+categories: Web 2.0, WordPress, CSS设计
+date: 2008/10/29 05:59:42
+guid: http://www.ufusion.org/?p=59
+permalink: http://blog.ksmx.me/Web 2.0/typographystyles
+tags: css, style.css, 排版效果, CSS美化, RocketTheme, Joomla
+title: 利用CSS美化排版效果
+---
+今天参考了Joomla 的一个主题，来美化网站的排版效果，修改了style.css 文件，增加一些很酷的排版效果，根据我的主题，重新更改了样式和颜色。 下面是效果的展示。
+
+这里我写一个简单的教程，方便喜欢的朋友也做一个。
+
+1. 先去网上找一个Joomla的主题，我下载的是RocketTheme 的Metamorph 主题，下载后，在主题目录下可以找到一个css文件夹，里面有一个typography.css 文件。这个文件就是主题的排版CSS样式表格。
+
+2. 做适当的修改之后，打开WordPress的后台，进入Design，编辑主题，找到style.css，将修改好的typography.css 里的代码复制到最下面就可以了。注意要避免冲突，比如你的WordPress主题一般定义了blockquote，而Joomla里面同样定义了它，你喜欢Joomla主题的，就要记得删除style.css里的blockquote定义。
+
+3. 发现了吗，Joomla样式里包含了一些图片，比如：<code>ul.bullet-1 li {background: url(../images/typo/bullet-1.png) 0 5px no-repeat;} </code>，根据这一行，找到typo文件夹，将图片上传到自己主题的images文件夹里，还有上面的文件目录路径是“../images/typo”，要修改为“images/tyop”，这样才正确。
+
+4. 测试一下，发布一篇加入了这些样式文章，或者将本文下面的HTML代码全部弄过去（使用HTML），记得要清除缓存文件（如果你使用了Cache插件的话），美化工作就结束了！Enjoying!<!--more-->
+<h1>This is an H1 Header</h1>
+<h2>This is an H2 Header</h2>
+<h3>This is an H3 Header</h3>
+<h4>This is an H4 Header</h4>
+<h5>This is an H5 Header</h5>
+<h4>Notice Styles are shown below</h4>
+<span class="attention">This is a sample of the 'attention' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="attention"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="notice">This is a sample of the 'notice' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="notice"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="alert">This is a sample of the 'alert' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="alert"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="download">This is a sample of the 'download' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="download"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="approved">This is a sample of the 'approved' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="approved"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="media">This is a sample of the 'media' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="media"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="note">This is a sample of the 'note' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="note"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="cart">This is a sample of the 'cart' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="cart"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="camera">This is a sample of the 'camera' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="camera"&gt;....&lt;/span&gt;</strong></span>
+
+<span class="doc">This is a sample of the 'doc' style.  Use this style to denote very important information to your users. To use this use the folllowing html: <strong>&lt;span class="doc"&gt;....&lt;/span&gt;</strong></span>
+<h3><a name="blockquotes" href="#blockquotes">Blockquote Styles</a></h3>
+<blockquote><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote&gt;....&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="blue"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">blue</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="red"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">red</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="green"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">green</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="purple"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">purple</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="orange"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">orange</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="brown"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">brown</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<blockquote class="grey"><strong>This is a blockquote, you will want to use the following formatting: &lt;blockquote class="<em style="font-weight: normal !important;">grey</em>"&gt;<em style="font-weight: normal !important;">...</em>&lt;/blockquote&gt;</strong></blockquote>
+<h3><a name="numbers" href="#numbers">Span Styles - Number</a></h3>
+Below is a list with <em style="font-weight: normal !important;">number</em>.  To use this style create a list in the following format: <strong>&lt;span class="number-[color2]"&gt;1[any number]&lt;/span&gt;</strong>
+
+<span class="number">1</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number</em>"&gt;<em style="font-weight: normal !important;">1</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number">2</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number</em>"&gt;<em style="font-weight: normal !important;">2</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number">3</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number</em>"&gt;<em style="font-weight: normal !important;">3</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-red">1</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-red</em>"&gt;<em style="font-weight: normal !important;">1</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-blue">2</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-blue</em>"&gt;<em style="font-weight: normal !important;">2</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-green">3</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-green</em>"&gt;<em style="font-weight: normal !important;">3</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-purple">1</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-purple</em>"&gt;<em style="font-weight: normal !important;">1</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-orange">2</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-orange</em>"&gt;<em style="font-weight: normal !important;">2</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-brown">3</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-brown</em>"&gt;<em style="font-weight: normal !important;">3</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+
+<span class="number-grey">4</span>To use this style create a list in the following format: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">number-grey</em>"&gt;<em style="font-weight: normal !important;">3</em>&lt;/span&gt;.<em style="font-weight: normal !important;">...some content...</em>.&lt;/p&gt;</strong>
+<h3><a name="highlights" href="#highlights">Highlight Styles</a></h3>
+This is a span that allows you to <span class="highlight">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-red">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-red</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-blue">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-blue</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-green">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-green</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-orange">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-orange</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-brown">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-brown</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-purple">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-purple</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-grey">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-grey</em>"&gt;...&lt;/span&gt;</strong>
+
+This is a span that allows you to <span class="highlight-bold">highlight words or phases</span>. Use the following format: <strong>&lt;span class="<em style="font-weight: normal !important;">highlight-bold</em>"&gt;...&lt;/span&gt;</strong>
+<h3><a name="insets" href="#insets">Inset Styles</a></h3>
+Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="inset-right">You will need to use the following formatting: <span style="font-weight: normal ! important;">&lt;span class="inset-left"&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/span&gt;</span></span>Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed euismod magna a nibh.
+
+Sed euismod magna a nibh. Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+
+Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<span class="inset-left">You will need to use the following formatting: <span style="font-weight: normal ! important;">&lt;span class="inset-left"&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/span&gt;</span></span>Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed euismod magna a nibh.
+
+Sed euismod magna a nibh. Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+<h3><a name="dropcap" href="#dropcap">DropCap Styles</a></h3>
+<span class="dropcap">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed euismod magna a nibh. Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed euismod magna a nibh.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-red">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed euismod magna a nibh. Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy. Vestibulum facilisis mollis neque. Sed orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed euismod magna a nibh.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-red</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-blue">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-blue</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-green">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-green</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-purple">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-purple</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-orange">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-orange</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-brown">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-brown</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+
+<span class="dropcap-grey">P</span>Praesent rutrum sapien ac felis. Phasellus elementum dolor quis turpis. Vestibulum nec mi vitae pede tincidunt nonummy.
+
+You will need to use the following formatting: <strong>&lt;p&gt;&lt;span class="<em style="font-weight: normal !important;">dropcap-grey</em>"&gt;<em style="font-weight: normal !important;">P</em>&lt;/span&gt;&lt;/p&gt;</strong>
+<h3><a name="important" href="#important">Important Emphasis Styles</a></h3>
+<div class="important"><span class="important-title">Sample Title</span>
+<span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></span></div>
+<div class="important-blue"><span class="important-title-blue">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-blue</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-blue</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>
+<div class="important-red"><span class="important-title-red">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-red</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-red</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>
+<div class="important-green"><span class="important-title-green">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-green</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-green</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>
+<div class="important-purple"><span class="important-title-purple">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-purple</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-purple</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>
+<div class="important-brown"><span class="important-title-brown">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-brown</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-brown</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>
+<div class="important-orange"><span class="important-title-orange">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-orange</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-orange</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>
+<div class="important-grey"><span class="important-title-grey">Sample Title</span>This is a span that lets you place all of the content into a nice well formed section. You will need to use the following formatting: <strong>&lt;div class="<em style="font-weight: normal !important;">important-grey</em>"&gt;&lt;span class="<em style="font-weight: normal !important;">important-title-grey</em>"&gt;<em style="font-weight: normal !important;">Sample Title</em>&lt;/span&gt;<em style="font-weight: normal !important;">...some content...</em>&lt;/div&gt;</strong></div>

@@ -1,0 +1,33 @@
+---
+categories: Tools
+date: 2009/05/30 00:04:00
+guid: http://ufusion.org/?p=362
+permalink: http://blog.ksmx.me/Tools/firefox-%e4%bc%98%e5%8c%96%e6%8c%87%e5%8d%97-%e7%ac%ac%e4%b8%80%e5%ad%a3-%e5%9c%a8%e5%bc%80%e5%a7%8b%e4%b9%8b%e5%89%8d%e5%bf%85%e9%a1%bb%e7%9f%a5%e9%81%93%e7%9a%84
+tags: Ubuntu, Firefox, Hacking, 优化
+title: Firefox 优化指南 第一季-在开始之前必须知道的
+---
+今天有位朋友说，总感觉Ubuntu下的Firefox很慢，尽管关掉所有插件，浏览起来所有网页都感觉有些慢。很久没有捣腾Firefox了，就在这里做个小指南吧。
+
+Firefox的内部配置管理，鼠标可以点出来的Tools &gt; Options menu；仅仅是冰山一角。实际上Firefox将很多参数的设置都放到了一个<span style="font-weight: bold; color: #9b0300;">prefs.js</span>文件中，而且您不需要手动来编辑这个文件，在浏览器中输入<strong>about:config</strong>就可以了。你会看到一个大大的保证书，要你注意，所有的高级修改有可能会影响稳定性。你必须点击"I'll be careful. I promise!" 才能够继续。OK，大概你已经意识到修改这个是有风险呢，那么我们就先备份一下原有配置吧。
+
+<!--more-->
+<blockquote><span style="font-weight: bold; color: #9b0300;">prefs.js</span>的放置位置列表：
+
+In Linux it's
+<span style="font-weight: bold; color: #9b0300;">~/.mozilla/firefox/<em>&lt;profile ID&gt;</em>.default/</span>
+
+In <a title="Apple Mac OS X" href="http://www.computerworld.com/action/inform.do?command=search&amp;searchTerms=Apple+Mac+OS+X">Mac OS X</a>, the profile folder is
+<span style="font-weight: bold; color: #9b0300;"><em>&lt;username&gt;</em>/Library/Application Support/Firefox/Profiles/<em>&lt;profile ID&gt;</em>.default/</span>
+
+In <a title="Microsoft Windows XP" href="http://www.computerworld.com/action/inform.do?command=search&amp;searchTerms=Microsoft+Windows+XP">Windows XP</a>, the profile folder is
+<span style="font-weight: bold; color: #9b0300;">\Documents and Settings\<em>&lt;username&gt;</em>\Application Data\Mozilla\Firefox\Profiles\<em>&lt;profile ID&gt;</em>.default\</span>
+
+In <a title="Microsoft Windows Vista" href="http://www.computerworld.com/action/inform.do?command=search&amp;searchTerms=Microsoft+Windows+Vista">Windows Vista</a>, this folder is
+<span style="font-weight: bold; color: #9b0300;">\Users\<em>&lt;username&gt;</em>\AppData\Roaming\Mozilla\Firefox\Profiles\<em>&lt;profile ID&gt;</em>.default\</span></blockquote>
+修改的时候需要注意，不管是什么参数，只有 string (text), integer (number) or Boolean (true/false)三种属性值。
+
+那么现在的问题就是到底改什么才能提高速度了。后面我根据网上的一篇《Hacking Firefox:: The secrets of about:config》文章来给大家介绍如何修改和告诉你为什么，这才是文章的意义。不知道为什么的教程，实在不知所云。
+
+整个指南的参数不一定已经存在在你的配置中，如果没有这些属性，你就自己创建出来。
+
+下面就让我们开始吧～！

@@ -1,0 +1,85 @@
+---
+categories: Linux, Advanced
+date: 2009/04/10 06:25:16
+guid: http://ufusion.org/?p=303
+permalink: http://blog.ksmx.me/Linux/ext3-ext4-reiserfs-vs
+tags: reiserfs, ext3, ext4, file system, 文件系统
+title: ext3, ext4 和 reiserfs 文件系统性能对比
+---
+通过使用下面几个方面来对ext3，ext4和reiserfs来做一个性能测试：
+<ol>
+	<li>创建空文件10000个的耗时</li>
+	<li>创建小文件，每个小文件使用512个blocks，一共创建10000个</li>
+	<li>创建一个2G文件的耗时</li>
+	<li>复制2G文件的耗时</li>
+	<li>删除2G大文件的耗时</li>
+	<li>删除10000个小文件的耗时</li>
+</ol>
+<!--more-->测试系统RHEL5 update 3，内核2.6.18.128-el5，SATA硬盘。测试用同一个4G的分区来做。我每一类测试做了3次，取所需时间的平均数。
+
+测试结果统计（使用time工具来计时）：
+<div>
+<table id="gpnz" border="1" cellspacing="0" cellpadding="3" width="100%" bordercolor="#000000">
+<tbody>
+<tr>
+<td width="25%">任务文件系统</td>
+<td width="25%">EXT3</td>
+<td width="25%">EXT4</td>
+<td width="25%">Reiserfs</td>
+</tr>
+<tr>
+<td width="25%">建立空文件</td>
+<td width="25%">0m13.109</td>
+<td width="25%"><span style="color: #ff0000;">0m12.977</span></td>
+<td width="25%">0m13.046</td>
+</tr>
+<tr>
+<td width="25%">建立小文件</td>
+<td width="25%">1m55.583</td>
+<td width="25%">1m15.253</td>
+<td width="25%"><span style="color: #ff0000;">1m0.192</span></td>
+</tr>
+<tr>
+<td width="25%">建立大文件</td>
+<td width="25%">0m43.58</td>
+<td width="25%"><span style="color: #ff0000;">0m37.942</span></td>
+<td width="25%">0m40.288</td>
+</tr>
+<tr>
+<td width="25%">复制大文件</td>
+<td width="25%">1m30.537</td>
+<td width="25%"><span style="color: #ff0000;">1m22.898</span></td>
+<td width="25%">1m28.705</td>
+</tr>
+<tr>
+<td width="25%">删除大文件</td>
+<td width="25%">0m2.218</td>
+<td width="25%"><span style="color: #ff0000;">0m0.246</span></td>
+<td width="25%">0m0.371</td>
+</tr>
+<tr>
+<td width="25%">删除小文件</td>
+<td width="25%">0m54.497</td>
+<td width="25%"><span style="color: #ff0000;">0m0.902</span></td>
+<td width="25%">0m0.979</td>
+</tr>
+</tbody></table>
+</div>
+根据这个不怎么专业的测试，我们发现EXT4独树一帜，仅仅在操作小文件的时候输给了Reiserfs，其他都超过了其他两个文件系统。不过这个也不能说明EXT4就一定最好，因为我们还没有考虑碎片问题，经过一段时间的使用再来测试，可能才能更客观。
+
+不过我们通过这个测试，发现我们的全新EXT4还是值得期待的。测试的时候，我使用的还只是mkfs.ext4dev 开发包。相信正式版的表现应该更上一层楼。
+<h2>扩展阅读</h2>
+对于磁盘性能的测试工具，又Postmark和Bonnie++，前者主要测试文件系统在邮件系统或者商务系统中的性能，针对需要频繁，大量地读取小文件。而Bonnie++主要测试大文件的。
+
+由于Reiserfs的树形写入特点，结合测试结果，我们可以得到如下的结论：
+<ul>
+	<li>在小型系统，Reiserfs和ext3的性能是比较好的，但由于ext3的目录项是线型的，而Reiserfs的目录项是树型的，文件较多时，Reiserfs要更好一些。</li>
+	<li>对于上G的大文件储蓄要求，各个文件系统差据很小，性能瓶颈在硬盘上。</li>
+	<li>虽然XFS和JFS设计结构很好，但都是针对大中型系统的，在小型系统中发挥不明显。</li>
+	<li>全日志模式和预定，回写这两种模式相比，差据是很大的。预定和回写两者差据不大。性能和安全的兼顾，文件系统的缺省安全模式，预定模式是比较好的选择。</li>
+</ul>
+ReiserFS介绍：http://en.wikipedia.org/wiki/ReiserFS
+
+Ext3介绍：http://en.wikipedia.org/wiki/Ext3
+
+Ext4介绍：http://en.wikipedia.org/wiki/Ext4

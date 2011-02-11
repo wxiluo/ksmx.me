@@ -1,0 +1,35 @@
+---
+categories: Linux, Advanced
+date: 2009/04/09 08:48:23
+guid: http://ufusion.org/?p=298
+permalink: http://blog.ksmx.me/Linux/linux-from-scratch-lfs-handbook
+tags: Linux, 操作系统, 编译, LFS, 源代码
+title: Linux From Scratch (LFS) 小结
+---
+要深入学习Linux，去做一次LFS会让你对Linux的组成和系统结构又一个总体的认识，对学习Linux操作系统是非常有帮助的。这里我很多朋友想要尝试一下，前段时间我第一次尝试的时候，搜集到了很多资料，这里写一个总结帖子，今后还会用到。
+<h2>什么是LFS</h2>
+关于什么是LFS，最好的说明都在官方网站上：<a href="http://www.linuxfromscratch.org/">http://www.linuxfromscratch.org/</a>
+
+上面对各种LFS做了介绍，一看就明白了，如果需要中文的介绍，到这里看：<a href="http://xxb.is-programmer.com/2008/2/7/LFS.1020.html">http://xxb.is-programmer.com/2008/2/7/LFS.1020.html</a><!--more-->
+<h2>迈出第一步 初学者必读</h2>
+在     				    <span class="navbar"><a accesskey="1" href="http://www.linuxsir.org/">LinuxSir.Org</a> 上有很多资料可以找到，这里有一个类似FQA的新手指南，简要的说明了新手需要注意的各种问题：<a href="http://www.linuxsir.org/bbs/showthread.php?t=231446">http://www.linuxsir.org/bbs/showthread.php?t=231446</a></span>
+<h2><span class="navbar">中文快速指南</span></h2>
+<span class="navbar">关于LFS的文档，在LFS官方网站上就有最权威的指南，如果觉得羞涩难懂，这里是一个国人写的快速指南，按照他的步骤就可以傻瓜式的完成，图文并茂</span><span class="navbar">：<a href="http://www.linuxsir.org/bbs/thread322894.html">http://www.linuxsir.org/bbs/thread322894.html</a></span><span class="navbar">，但是我不推荐这种方式，因为他忽略了很多说明，而官方的文档对每一个参数都做了详细的说明下载下来对比一下，你就知道差据很大，这样下来你仅仅是练打字而已，收获不会很多。</span>
+<h2><span class="navbar">LFS官方文档
+</span></h2>
+LFS官方文档可以在官方网站上找到：<a href="http://www.linuxfromscratch.org/lfs/download.html">http://www.linuxfromscratch.org/lfs/download.html</a>
+
+<span class="navbar">如果你实在对英文不感冒，这里还有经过翻译的，这个文档是翻译了官方的，遗憾的是，官方的文档现在已经更新了，这个文档是针对老版本的LFS 6.2：<a href="http://lamp.linux.gov.cn/Linux/LFS-6.2/index.html">http://lamp.linux.gov.cn/Linux/LFS-6.2/index.html</a></span>
+<h2><span class="navbar">Michael的建议</span></h2>
+有了上面的资料，顺利的做完LFS应该没有什么问题了。不过还需要补充一点经验之谈：
+<ol>
+	<li>第一次做LFS，最好使用虚拟机。原因很简单，人总是会犯错，而且第一次总会需要查资料，最好在虚拟机上做，这样方便很多，出错了也不用担心自己的系统，而且LFS的关机恢复很麻烦，浪费了很多时间。</li>
+	<li>耐心+细心=成功。你会发现你需要敲很多的命令，也需要很长时间的等待。仔细检查键入错误是很需要耐心的，编译也需要很长时间，我这里Mac Book 2.5GHz 4G内存，编译用了3个晚上的时间。</li>
+	<li>不要离开计算机，让它孤独的编译。你可以利用编译的这段时间，慢慢品读经典的LFS文档，里面实际操作的部分并不多，主要是有很多的讲解，不去读，你将一无所获。正如作者在第一章第一节所写的：
+<blockquote>This <em>Linux From Scratch</em> book         provides readers with the background and instruction to design and         build custom Linux systems. This book highlights the Linux from         Scratch project and the benefits of using this system. Users can         dictate all aspects of their system, including directory layout,         script setup, and security. The resulting system will be compiled         completely from the source code, and the user will be able to specify         where, why, and how programs are installed. This book allows readers         to fully customize Linux systems to their own needs and allows users         more control over their system.</blockquote>
+</li>
+	<li>最好不要复制粘贴命令，虽然我们都不想成为打字机，但是编译时要用到的命令，多敲几遍也大有好处，记忆深刻。</li>
+	<li>不要迷信“高手”，他们的帖子也都是翻译照搬的，而且可能你找到的帖子已经过时了。一本官方手册，足够了～！</li>
+	<li>小技巧：LFS Live CD里面不单单包含了做系统所需的软件包，里面还有和CD配套的文档，如果你在真机上做LFS，可以切换到tty2上，用w3m 打开文档，边看边做。</li>
+</ol>
+好了，总结帖子就写到这里，这个东西资料很多了，过程都大概一样的，我也没有必要搞个什么原创了，等做到BLFS我在总结一下，看看有没有值得写的。
