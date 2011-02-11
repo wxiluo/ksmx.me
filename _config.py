@@ -19,7 +19,7 @@
 #  If you're hosting a blogofile powered site as a subdirectory of a larger
 #  non-blogofile site, then you would set the site_url to the full URL
 #  including that subdirectory: "http://www.yoursite.com/path/to/blogofile-dir"
-site.url = "http://blog.ksmx.me"
+site.url = "http://ksmx.me"
 
 #### Blog Settings ####
 blog = controllers.blog
@@ -70,6 +70,8 @@ blog.post_default_filters = {
     "html": "syntax_highlight"
 }
 
+
+## This is for tag feature from gbishop
 blog.tag_bins = 5
 blog.top_tags_count = 10
 blog.tag_dir = 'tag'
