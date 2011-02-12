@@ -1,0 +1,15 @@
+---
+title: Migrated to Blogofile
+categories: Blogofile, blog
+date: 2011/02/13 12:24:00
+tags: blog, nginx, varnish
+---
+经过一段时间的努力，我终于从WordPress迁移到了Blogofile。目前关键问题是之前文章的地址失效了，与此同时，文章的格式和排版也有了变化。不过内容是都在。我不打算再花费时间在老文章中了。除非实在有必要这样做。
+
+现在页面用了[html5](http://jayj.dk/2010/html5-theme-version-1-2/)的主题。目前只能说暂时可以和Blogofile一起使用，还没有来得及对中文进行优化。这些工作还是留到有时间的时候再来完成吧。
+
+部署环节，遇到了url redirect的一些问题，默认Blogofile自动生成页面上的url没有最后的"/"，返回的Location里却加入了nginx监听的端口号8000，查找文档之后，发现加入[port_in_redirect off](http://wiki.nginx.org/HttpCoreModule#port_in_redirect)就解决了。整个blog都应该可以被varnish缓存，响应速度提高很多。
+
+下一步我打算加入评论，Google Analytics和about页面。慢慢来做吧。
+
+明天早上的飞机回北京，开始新的工作。加油～！
