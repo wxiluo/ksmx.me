@@ -56,7 +56,7 @@ blog.auto_permalink.enabled = True
 blog.auto_permalink.path = ":blog_path/:year/:month/:day/:title"
 
 ## Turns on/off Disqus comment system integration
-blog.disqus_enabled = True
+blog.disqus.enabled = True
 
 blog.disqus.name = "wxiluo"
 
