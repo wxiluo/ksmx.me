@@ -73,5 +73,5 @@ blog.post_default_filters = {
 
 ## This is for tag feature from gbishop
 blog.tag_bins = 5
-blog.top_tags_count = 10
+blog.top_tags_count = 50
 blog.tag_dir = 'tag'

@@ -4,18 +4,19 @@
 
     <h2><a href="#">Welcome!</a></h2>
     
-    <a href="#"><img src="images/thumbnail.jpg" alt="" class="thumbnail alignleft" /></a>
+    ## <a href="#"><img src="images/thumbnail.jpg" alt="" class="thumbnail alignleft" /></a>
     
     <p>
-        Hey, there! My name is Michael Kang, Chinese name is 康上明学, and I am a system administrator & python programmer from Beijing, China. I work with all kinds of Linux and python related technologies, including cloud computing and Django. However I primarily work on Linux server maintain.
+        这是一个极度不完善的主页，P都没有。只有一个大大的，刺眼的，不和谐的，缺少爱的，没人看的，很脑残的Welcome!
+        很不幸，你不小心到这个质量极差，文笔不佳，牢骚满腹，充满bug，在围脖泛滥还在死撑着的，，，博客。
     </p>
-    
+
     <p>
-        I first started using Linux in 1995, and what started as a bobby, has now become my choice of career. I’ve worked on many projects ranging in size of complexity. I have experience to design, deploy and maintain large distributed system on cloud, including GoGrid and Amazon EC2.
+        如果你是被搜索引擎骗到这里的，这就是那个搜索引擎算法狗屎的最好反面教材。
     </p>
-    
+
     <p>
-        I like reading, exploring and sharing new technologies on Internet. Welcome to my website.
+        主页很蛋疼，请直接跳转到<a href="/blog/">日志页面</a>。
     </p>
     
     <div class="clear"></div>  
