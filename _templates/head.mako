@@ -13,6 +13,9 @@
 	<link href="/css/ie.css" rel="stylesheet" type="text/css" />
 <![endif]-->
 
+## Google Font api
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Cabin+Sketch:bold">
+
 ## Google Analytic Code
 <script type="text/javascript">
 

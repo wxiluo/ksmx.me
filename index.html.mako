@@ -2,7 +2,7 @@
 
 <article class="post">
 
-    <h2><a href="#">Welcome!</a></h2>
+    <h2 style="font-family: 'Cabin Sketch', serif"><a href="#">Welcome!</a></h2>
     
     ## <a href="#"><img src="images/thumbnail.jpg" alt="" class="thumbnail alignleft" /></a>
     

@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 body { 
 	background: #eee url(images/bg.png) repeat;
 	color: #333333;
-	font: 14px/24px Georgia, 'Times New Roman', Times, serif;
+	font: 14px/24px '\5FAE\8F6F\96C5\9ED1', Georgia, 'Times New Roman', Times, serif;
 }
 
 /* HTML5 */
@@ -106,17 +106,17 @@ ol, ul, pre, table, fieldset, blockquote, .widget {
 	margin-bottom: 20px;
 }
 
-h1 { font-size: 32px; }
-h2 { font-size: 28px; }
-h3 { font-size: 36px; letter-spacing: -1px; }
-h4 { font-size: 23px; }
-h5 { font-size: 19px; }
-h6 { font-size: 16px; }
+h1 { font-size: 32px; line-height: 100% }
+h2 { font-size: 28px; line-height: 100% }
+h3 { font-size: 36px; letter-spacing: -1px; line-height: 100% }
+h4 { font-size: 23px; line-height: 100% }
+h5 { font-size: 19px; line-height: 100% }
+h6 { font-size: 16px; line-height: 100% }
 
 #header h1,
 .post h2,
 h3 {
-	font-family: 'ChunkFive Regular', Arial, Helvetica, sans-serif; /* Chunkfive is called via @font-face */
+	font-family: 'Cabin Sketch', '\5FAE\8F6F\96C5\9ED1', 'ChunkFive Regular', Arial, Helvetica, sans-serif; /* Chunkfive is called via @font-face */
 }
 
 hr { border: 0 solid #ccc; border-top-width: 1px; clear: both; height: 0; }
@@ -475,3 +475,30 @@ img.alignright { margin-left: 15px; }
 	-moz-transform: rotate(-1deg);
 	transform: rotate(-1deg);
  }
+
+ /* Sidebar tag */
+
+#sidebar #tags .tag0 {
+    font-size: 0.7em;
+}
+
+#sidebar #tags .tag1 {
+    font-size: 0.9em;
+}
+
+#sidebar #tags .tag2 {
+    font-size: 1.1em;
+}
+
+#sidebar #tags .tag3 {
+    font-size: 1.3em;
+}
+
+#sidebar #tags .tag4 {
+    font-size: 1.5em;
+}
+
+#sidebar #tags .tag5 {
+    font-size: 1.7em;
+}
+
